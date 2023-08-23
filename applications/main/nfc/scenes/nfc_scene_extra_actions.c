@@ -20,31 +20,31 @@ void nfc_scene_extra_actions_on_enter(void* context) {
 
     submenu_add_item(
         submenu,
-        "Read Specific Card Type",
+        "Ler Tipo de Cartao Espec.",
         SubmenuIndexReadCardType,
         nfc_scene_extra_actions_submenu_callback,
         nfc);
     submenu_add_item(
         submenu,
-        "Mifare Classic Keys",
+        "Chaves Mifare Classic",
         SubmenuIndexMfClassicKeys,
         nfc_scene_extra_actions_submenu_callback,
         nfc);
     submenu_add_item(
         submenu,
-        "Unlock NTAG/Ultralight",
+        "Desbloq. NTAG/Ultralight",
         SubmenuIndexMfUltralightUnlock,
         nfc_scene_extra_actions_submenu_callback,
         nfc);
     submenu_add_item(
         submenu,
-        "Unlock SLIX-L",
+        "Desbloq. SLIX-L",
         SubmenuIndexNfcVUnlock,
         nfc_scene_extra_actions_submenu_callback,
         nfc);
     submenu_add_item(
         submenu,
-        "Listen NfcV Reader",
+        "Ouvir Leitor NfcV",
         SubmenuIndexNfcVSniff,
         nfc_scene_extra_actions_submenu_callback,
         nfc);

@@ -12,11 +12,11 @@ void subghz_test_scene_show_only_rx_on_enter(void* context) {
     // Setup view
     Popup* popup = app->popup;
 
-    const char* header_text = "Transmission is blocked";
-    const char* message_text = "Transmission on\nthis frequency is\nrestricted in\nyour region";
+    const char* header_text = "Transmissao bloqueada";
+    const char* message_text = "Transmissao\nnesta frequencia\nesta restrita\nem sua regiao";
     if(!furi_hal_region_is_provisioned()) {
-        header_text = "Firmware update needed";
-        message_text = "Please update\nfirmware before\nusing this feature\nflipp.dev/upd";
+        header_text = "Atualizacao necessaria";
+        message_text = "Por favor, atualize\no firmware antes\nde usar este recurso\nflipp.dev/upd";
     }
 
     popup_set_header(popup, header_text, 63, 3, AlignCenter, AlignTop);

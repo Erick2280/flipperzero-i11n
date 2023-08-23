@@ -19,19 +19,19 @@ void infrared_scene_start_on_enter(void* context) {
 
     submenu_add_item(
         submenu,
-        "Universal Remotes",
+        "Controles Universais",
         SubmenuIndexUniversalRemotes,
         infrared_scene_start_submenu_callback,
         infrared);
     submenu_add_item(
         submenu,
-        "Learn New Remote",
+        "Aprender Novo Controle",
         SubmenuIndexLearnNewRemote,
         infrared_scene_start_submenu_callback,
         infrared);
     submenu_add_item(
         submenu,
-        "Saved Remotes",
+        "Controles Salvos",
         SubmenuIndexSavedRemotes,
         infrared_scene_start_submenu_callback,
         infrared);

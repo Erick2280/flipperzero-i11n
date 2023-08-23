@@ -12,7 +12,7 @@
 
 #define AUTO_LOCK_DELAY_COUNT 6
 const char* const auto_lock_delay_text[AUTO_LOCK_DELAY_COUNT] = {
-    "OFF",
+    "NAO",
     "30s",
     "60s",
     "2min",
@@ -25,8 +25,8 @@ const uint32_t auto_lock_delay_value[AUTO_LOCK_DELAY_COUNT] =
 
 #define CLOCK_ENABLE_COUNT 2
 const char* const clock_enable_text[CLOCK_ENABLE_COUNT] = {
-    "OFF",
-    "ON",
+    "NAO",
+    "SIM",
 };
 
 const uint32_t clock_enable_value[CLOCK_ENABLE_COUNT] = {0, 1};
@@ -59,15 +59,15 @@ void desktop_settings_scene_start_on_enter(void* context) {
     VariableItem* item;
     uint8_t value_index;
 
-    variable_item_list_add(variable_item_list, "Primary Favorite App", 1, NULL, NULL);
+    variable_item_list_add(variable_item_list, "App Favorito Primario", 1, NULL, NULL);
 
-    variable_item_list_add(variable_item_list, "Secondary Favorite App", 1, NULL, NULL);
+    variable_item_list_add(variable_item_list, "App Favorito Secundario", 1, NULL, NULL);
 
-    variable_item_list_add(variable_item_list, "PIN Setup", 1, NULL, NULL);
+    variable_item_list_add(variable_item_list, "Configurar PIN", 1, NULL, NULL);
 
     item = variable_item_list_add(
         variable_item_list,
-        "Auto Lock Time",
+        "Bloq. Auto.",
         AUTO_LOCK_DELAY_COUNT,
         desktop_settings_scene_start_auto_lock_delay_changed,
         app);
@@ -81,7 +81,7 @@ void desktop_settings_scene_start_on_enter(void* context) {
 
     item = variable_item_list_add(
         variable_item_list,
-        "Show Clock",
+        "Mostrar Relog.",
         CLOCK_ENABLE_COUNT,
         desktop_settings_scene_start_clock_enable_changed, //
         app);

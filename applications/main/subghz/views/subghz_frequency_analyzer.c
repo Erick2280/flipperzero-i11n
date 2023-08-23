@@ -100,7 +100,7 @@ static void subghz_frequency_analyzer_log_frequency_draw(
     if(items_count == 0) {
         canvas_draw_rframe(canvas, offset_x + 27, offset_y - 3, 73, 16, 5);
         canvas_draw_str_aligned(
-            canvas, offset_x + 64, offset_y + 8, AlignCenter, AlignBottom, "No records");
+            canvas, offset_x + 64, offset_y + 8, AlignCenter, AlignBottom, "Sem registros");
         return;
     } else if(items_count > 3) {
         elements_scrollbar_pos(
@@ -169,15 +169,15 @@ void subghz_frequency_analyzer_draw(Canvas* canvas, SubGhzFrequencyAnalyzerModel
         const char* log_order_by_name =
             subghz_frequency_analyzer_log_get_order_name(model->log_frequency_order_by);
         if(items_count < LOG_FREQUENCY_MAX_ITEMS) {
-            snprintf(buffer, sizeof(buffer), "Frequency Analyzer [%s]", log_order_by_name);
+            snprintf(buffer, sizeof(buffer), "Analisador de Frequencia [%s]", log_order_by_name);
             canvas_draw_str_aligned(canvas, 64, 8, AlignCenter, AlignBottom, buffer);
         } else {
-            snprintf(buffer, sizeof(buffer), "The log is full! [%s]", log_order_by_name);
+            snprintf(buffer, sizeof(buffer), "O log esta cheio! [%s]", log_order_by_name);
             canvas_draw_str(canvas, 2, 8, buffer);
         }
         subghz_frequency_analyzer_log_frequency_draw(canvas, model);
     } else {
-        canvas_draw_str(canvas, 0, 8, "Frequency Analyzer");
+        canvas_draw_str(canvas, 0, 8, "Analisador de Frequencia");
         canvas_draw_icon(canvas, 108, 0, &I_Internal_antenna_20x12);
         canvas_draw_str(canvas, 0, 64, "RSSI");
         subghz_frequency_analyzer_draw_rssi(canvas, model->rssi, 20, 64);

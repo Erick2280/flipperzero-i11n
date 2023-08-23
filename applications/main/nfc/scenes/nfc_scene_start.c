@@ -21,18 +21,18 @@ void nfc_scene_start_on_enter(void* context) {
     Nfc* nfc = context;
     Submenu* submenu = nfc->submenu;
 
-    submenu_add_item(submenu, "Read", SubmenuIndexRead, nfc_scene_start_submenu_callback, nfc);
+    submenu_add_item(submenu, "Ler", SubmenuIndexRead, nfc_scene_start_submenu_callback, nfc);
     submenu_add_item(
-        submenu, "Detect Reader", SubmenuIndexDetectReader, nfc_scene_start_submenu_callback, nfc);
-    submenu_add_item(submenu, "Saved", SubmenuIndexSaved, nfc_scene_start_submenu_callback, nfc);
+        submenu, "Detectar Leitor", SubmenuIndexDetectReader, nfc_scene_start_submenu_callback, nfc);
+    submenu_add_item(submenu, "Salvos", SubmenuIndexSaved, nfc_scene_start_submenu_callback, nfc);
     submenu_add_item(
-        submenu, "Extra Actions", SubmenuIndexExtraAction, nfc_scene_start_submenu_callback, nfc);
+        submenu, "Acoes Extra", SubmenuIndexExtraAction, nfc_scene_start_submenu_callback, nfc);
     submenu_add_item(
-        submenu, "Add Manually", SubmenuIndexAddManually, nfc_scene_start_submenu_callback, nfc);
+        submenu, "Adicionar Manualmente", SubmenuIndexAddManually, nfc_scene_start_submenu_callback, nfc);
 
     if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagDebug)) {
         submenu_add_item(
-            submenu, "Debug", SubmenuIndexDebug, nfc_scene_start_submenu_callback, nfc);
+            submenu, "Depuracao", SubmenuIndexDebug, nfc_scene_start_submenu_callback, nfc);
     }
 
     submenu_set_selected_item(

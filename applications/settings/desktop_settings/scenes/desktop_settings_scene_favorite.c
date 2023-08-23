@@ -7,10 +7,10 @@
 
 #define APPS_COUNT (FLIPPER_APPS_COUNT + FLIPPER_EXTERNAL_APPS_COUNT)
 
-#define EXTERNAL_BROWSER_NAME ("Apps")
+#define EXTERNAL_BROWSER_NAME ("Aplicativos")
 #define EXTERNAL_BROWSER_INDEX (APPS_COUNT + 1)
 
-#define EXTERNAL_APPLICATION_NAME ("[Select App]")
+#define EXTERNAL_APPLICATION_NAME ("[Selecionar App]")
 #define EXTERNAL_APPLICATION_INDEX (APPS_COUNT + 2)
 
 #define PRESELECTED_SPECIAL 0xffffffff
@@ -97,7 +97,7 @@ void desktop_settings_scene_favorite_on_enter(void* context) {
     }
 
     submenu_set_header(
-        submenu, primary_favorite ? "Primary favorite app:" : "Secondary favorite app:");
+        submenu, primary_favorite ? "App primario favorito:" : "App secundario favorito:");
     submenu_set_selected_item(submenu, pre_select_item); // If set during loop, visual glitch.
 
     view_dispatcher_switch_to_view(app->view_dispatcher, DesktopSettingsAppViewMenu);

@@ -116,7 +116,7 @@ static void loader_menu_build_menu(LoaderMenuApp* app, LoaderMenu* menu) {
             (void*)menu);
     }
     menu_add_item(
-        app->primary_menu, "Settings", &A_Settings_14, i++, loader_menu_switch_to_settings, app);
+        app->primary_menu, "Configuracoes", &A_Settings_14, i++, loader_menu_switch_to_settings, app);
     menu_add_item(
         app->primary_menu,
         LOADER_APPLICATIONS_NAME,

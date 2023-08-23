@@ -83,7 +83,7 @@ static void direct_draw_run(DirectDraw* instance) {
             start = DWT->CYCCNT;
             counter = 0;
         }
-        snprintf(buffer, BUFFER_SIZE, "FPS: %.1f", (double)fps);
+        snprintf(buffer, BUFFER_SIZE, "QPS: %.1f", (double)fps);
 
         canvas_reset(instance->canvas);
         canvas_set_color(instance->canvas, ColorXOR);

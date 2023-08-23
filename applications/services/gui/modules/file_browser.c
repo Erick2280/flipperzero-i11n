@@ -576,7 +576,7 @@ static void browser_draw_list(Canvas* canvas, FileBrowserModel* model) {
             canvas_height(canvas) / 2,
             AlignCenter,
             AlignCenter,
-            "<Empty>");
+            "<Vazio>");
     }
 
     furi_string_free(filename);

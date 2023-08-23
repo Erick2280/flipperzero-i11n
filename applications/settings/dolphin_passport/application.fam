@@ -1,6 +1,6 @@
 App(
     appid="passport",
-    name="Passport",
+    name="Passaporte",
     apptype=FlipperAppType.SETTINGS,
     entry_point="passport_app",
     cdefines=["APP_PASSPORT"],

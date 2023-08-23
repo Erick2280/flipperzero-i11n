@@ -268,7 +268,7 @@ void subghz_view_receiver_draw(Canvas* canvas, SubGhzViewReceiverModel* model) {
         canvas_draw_str(canvas, 97, 64, furi_string_get_cstr(model->history_stat_str));
         canvas_set_font(canvas, FontSecondary);
         elements_bold_rounded_frame(canvas, 14, 8, 99, 48);
-        elements_multiline_text(canvas, 65, 26, "To unlock\npress:");
+        elements_multiline_text(canvas, 65, 26, "P/ desbl.\npressione:");
         canvas_draw_icon(canvas, 65, 42, &I_Pin_back_arrow_10x8);
         canvas_draw_icon(canvas, 80, 42, &I_Pin_back_arrow_10x8);
         canvas_draw_icon(canvas, 95, 42, &I_Pin_back_arrow_10x8);
@@ -277,7 +277,7 @@ void subghz_view_receiver_draw(Canvas* canvas, SubGhzViewReceiverModel* model) {
         break;
     case SubGhzViewReceiverBarShowUnlock:
         canvas_draw_icon(canvas, 64, 56, &I_Unlock_7x8);
-        canvas_draw_str(canvas, 74, 64, "Unlocked");
+        canvas_draw_str(canvas, 74, 64, "Desbloqueado");
         break;
     default:
         canvas_draw_str(canvas, 44, 64, furi_string_get_cstr(model->frequency_str));

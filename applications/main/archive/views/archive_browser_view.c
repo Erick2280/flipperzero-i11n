@@ -9,16 +9,16 @@
 #define SCROLL_DELAY (2)
 
 static const char* ArchiveTabNames[] = {
-    [ArchiveTabFavorites] = "Favorites",
+    [ArchiveTabFavorites] = "Favoritos",
     [ArchiveTabIButton] = "iButton",
     [ArchiveTabNFC] = "NFC",
     [ArchiveTabSubGhz] = "Sub-GHz",
     [ArchiveTabLFRFID] = "RFID LF",
-    [ArchiveTabInfrared] = "Infrared",
+    [ArchiveTabInfrared] = "Infrav.",
     [ArchiveTabBadUsb] = "Bad USB",
     [ArchiveTabU2f] = "U2F",
-    [ArchiveTabApplications] = "Apps",
-    [ArchiveTabBrowser] = "Browser",
+    [ArchiveTabApplications] = "Aplicativos",
+    [ArchiveTabBrowser] = "Navegador",
 };
 
 static const Icon* ArchiveItemIcons[] = {
@@ -54,15 +54,15 @@ static void render_item_menu(Canvas* canvas, ArchiveBrowserViewModel* model) {
 
     FuriString* menu[MENU_ITEMS];
 
-    menu[0] = furi_string_alloc_set("Run in app");
-    menu[1] = furi_string_alloc_set("Pin");
-    menu[2] = furi_string_alloc_set("Rename");
-    menu[3] = furi_string_alloc_set("Delete");
+    menu[0] = furi_string_alloc_set("Ex. no app");
+    menu[1] = furi_string_alloc_set("Fixar");
+    menu[2] = furi_string_alloc_set("Renomear");
+    menu[3] = furi_string_alloc_set("Apagar");
 
     ArchiveFile_t* selected = files_array_get(model->files, model->item_idx - model->array_offset);
 
     if((selected->fav) || (model->tab_idx == ArchiveTabFavorites)) {
-        furi_string_set(menu[1], "Unpin");
+        furi_string_set(menu[1], "Desafixar");
     }
 
     if(!archive_is_known_app(selected->type)) {
@@ -70,7 +70,7 @@ static void render_item_menu(Canvas* canvas, ArchiveBrowserViewModel* model) {
         furi_string_set(menu[1], "---");
     } else {
         if(model->tab_idx == ArchiveTabFavorites) {
-            furi_string_set(menu[2], "Move");
+            furi_string_set(menu[2], "Mover");
             furi_string_set(menu[3], "---");
         } else if(selected->is_app) {
             furi_string_set(menu[2], "---");

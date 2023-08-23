@@ -46,7 +46,7 @@ void subghz_scene_delete_on_enter(void* context) {
     furi_string_free(text);
 
     widget_add_button_element(
-        subghz->widget, GuiButtonTypeRight, "Delete", subghz_scene_delete_callback, subghz);
+        subghz->widget, GuiButtonTypeRight, "Apagar", subghz_scene_delete_callback, subghz);
 
     view_dispatcher_switch_to_view(subghz->view_dispatcher, SubGhzViewIdWidget);
 }

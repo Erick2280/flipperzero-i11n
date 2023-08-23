@@ -76,25 +76,25 @@ CrashTest* crash_test_alloc() {
     view_set_previous_callback(view, crash_test_exit_callback);
     view_dispatcher_add_view(instance->view_dispatcher, CrashTestViewSubmenu, view);
     submenu_add_item(
-        instance->submenu, "Check", CrashTestSubmenuCheck, crash_test_submenu_callback, instance);
+        instance->submenu, "Verificar", CrashTestSubmenuCheck, crash_test_submenu_callback, instance);
     submenu_add_item(
         instance->submenu,
-        "Check with message",
+        "Verificar com mensagem",
         CrashTestSubmenuCheckMessage,
         crash_test_submenu_callback,
         instance);
     submenu_add_item(
-        instance->submenu, "Assert", CrashTestSubmenuAssert, crash_test_submenu_callback, instance);
+        instance->submenu, "Assertar", CrashTestSubmenuAssert, crash_test_submenu_callback, instance);
     submenu_add_item(
         instance->submenu,
-        "Assert with message",
+        "Assertar com mensagem",
         CrashTestSubmenuAssertMessage,
         crash_test_submenu_callback,
         instance);
     submenu_add_item(
-        instance->submenu, "Crash", CrashTestSubmenuCrash, crash_test_submenu_callback, instance);
+        instance->submenu, "Falhar", CrashTestSubmenuCrash, crash_test_submenu_callback, instance);
     submenu_add_item(
-        instance->submenu, "Halt", CrashTestSubmenuHalt, crash_test_submenu_callback, instance);
+        instance->submenu, "Interromper", CrashTestSubmenuHalt, crash_test_submenu_callback, instance);
 
     return instance;
 }

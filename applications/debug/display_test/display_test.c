@@ -180,13 +180,13 @@ DisplayTest* display_test_alloc() {
     view_dispatcher_add_view(instance->view_dispatcher, DisplayTestViewSubmenu, view);
     submenu_add_item(
         instance->submenu,
-        "Test",
+        "Testar",
         DisplayTestViewDisplayTest,
         display_test_submenu_callback,
         instance);
     submenu_add_item(
         instance->submenu,
-        "Configure",
+        "Configurar",
         DisplayTestViewConfigure,
         display_test_submenu_callback,
         instance);

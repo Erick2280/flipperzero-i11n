@@ -4,12 +4,12 @@
 #include <locale/locale.h>
 
 const char* const log_level_text[] = {
-    "Default",
-    "None",
-    "Error",
-    "Warning",
+    "Padrao",
+    "Nenhum",
+    "Erro",
+    "Alerta",
     "Info",
-    "Debug",
+    "Depuracao",
     "Trace",
 };
 
@@ -31,8 +31,8 @@ static void log_level_changed(VariableItem* item) {
 }
 
 const char* const debug_text[] = {
-    "OFF",
-    "ON",
+    "NAO",
+    "SIM",
 };
 
 static void debug_changed(VariableItem* item) {
@@ -46,8 +46,8 @@ static void debug_changed(VariableItem* item) {
 }
 
 const char* const heap_trace_mode_text[] = {
-    "None",
-    "Main",
+    "Nenhum",
+    "Principal",
 #if FURI_DEBUG
     "Tree",
     "All",
@@ -71,7 +71,7 @@ static void heap_trace_mode_changed(VariableItem* item) {
 }
 
 const char* const mesurement_units_text[] = {
-    "Metric",
+    "Metrico",
     "Imperial",
 };
 
@@ -105,9 +105,9 @@ static void time_format_changed(VariableItem* item) {
 }
 
 const char* const date_format_text[] = {
-    "D/M/Y",
-    "M/D/Y",
-    "Y/M/D",
+    "D/M/A",
+    "M/D/A",
+    "A/M/D",
 };
 
 const uint32_t date_format_value[] = {
@@ -124,8 +124,8 @@ static void date_format_changed(VariableItem* item) {
 }
 
 const char* const hand_mode[] = {
-    "Righty",
-    "Lefty",
+    "Destro",
+    "Canhoto",
 };
 
 static void hand_orient_changed(VariableItem* item) {
@@ -139,8 +139,8 @@ static void hand_orient_changed(VariableItem* item) {
 }
 
 const char* const sleep_method[] = {
-    "Default",
-    "Legacy",
+    "Padrao",
+    "Legado",
 };
 
 static void sleep_method_changed(VariableItem* item) {
@@ -175,14 +175,14 @@ SystemSettings* system_settings_alloc() {
     app->var_item_list = variable_item_list_alloc();
 
     item = variable_item_list_add(
-        app->var_item_list, "Hand Orient", COUNT_OF(hand_mode), hand_orient_changed, app);
+        app->var_item_list, "Orient. da Mao", COUNT_OF(hand_mode), hand_orient_changed, app);
     value_index = furi_hal_rtc_is_flag_set(FuriHalRtcFlagHandOrient) ? 1 : 0;
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, hand_mode[value_index]);
 
     item = variable_item_list_add(
         app->var_item_list,
-        "Units",
+        "Unidades",
         COUNT_OF(mesurement_units_text),
         mesurement_units_changed,
         app);
@@ -192,35 +192,35 @@ SystemSettings* system_settings_alloc() {
     variable_item_set_current_value_text(item, mesurement_units_text[value_index]);
 
     item = variable_item_list_add(
-        app->var_item_list, "Time Format", COUNT_OF(time_format_text), time_format_changed, app);
+        app->var_item_list, "Form. Hora", COUNT_OF(time_format_text), time_format_changed, app);
     value_index = value_index_uint32(
         locale_get_time_format(), time_format_value, COUNT_OF(time_format_value));
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, time_format_text[value_index]);
 
     item = variable_item_list_add(
-        app->var_item_list, "Date Format", COUNT_OF(date_format_text), date_format_changed, app);
+        app->var_item_list, "Form. Data", COUNT_OF(date_format_text), date_format_changed, app);
     value_index = value_index_uint32(
         locale_get_date_format(), date_format_value, COUNT_OF(date_format_value));
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, date_format_text[value_index]);
 
     item = variable_item_list_add(
-        app->var_item_list, "Log Level", COUNT_OF(log_level_text), log_level_changed, app);
+        app->var_item_list, "Nivel de Log", COUNT_OF(log_level_text), log_level_changed, app);
     value_index = value_index_uint32(
         furi_hal_rtc_get_log_level(), log_level_value, COUNT_OF(log_level_text));
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, log_level_text[value_index]);
 
     item = variable_item_list_add(
-        app->var_item_list, "Debug", COUNT_OF(debug_text), debug_changed, app);
+        app->var_item_list, "Depuracao", COUNT_OF(debug_text), debug_changed, app);
     value_index = furi_hal_rtc_is_flag_set(FuriHalRtcFlagDebug) ? 1 : 0;
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, debug_text[value_index]);
 
     item = variable_item_list_add(
         app->var_item_list,
-        "Heap Trace",
+        "Rastr. Pilha",
         COUNT_OF(heap_trace_mode_text),
         heap_trace_mode_changed,
         app);
@@ -231,7 +231,7 @@ SystemSettings* system_settings_alloc() {
     variable_item_set_current_value_text(item, heap_trace_mode_text[value_index]);
 
     item = variable_item_list_add(
-        app->var_item_list, "Sleep Method", COUNT_OF(sleep_method), sleep_method_changed, app);
+        app->var_item_list, "Mec. de Sono", COUNT_OF(sleep_method), sleep_method_changed, app);
     value_index = furi_hal_rtc_is_flag_set(FuriHalRtcFlagLegacySleep) ? 1 : 0;
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, sleep_method[value_index]);

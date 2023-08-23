@@ -43,12 +43,12 @@ BtDebugApp* bt_debug_app_alloc() {
     app->submenu = submenu_alloc();
     submenu_add_item(
         app->submenu,
-        "Carrier test",
+        "Teste de portador",
         BtDebugSubmenuIndexCarrierTest,
         bt_debug_submenu_callback,
         app);
     submenu_add_item(
-        app->submenu, "Packet test", BtDebugSubmenuIndexPacketTest, bt_debug_submenu_callback, app);
+        app->submenu, "Teste de pacote", BtDebugSubmenuIndexPacketTest, bt_debug_submenu_callback, app);
     view_set_previous_callback(submenu_get_view(app->submenu), bt_debug_exit);
     view_dispatcher_add_view(
         app->view_dispatcher, BtDebugAppViewSubmenu, submenu_get_view(app->submenu));
@@ -97,7 +97,7 @@ int32_t bt_debug_app(void* p) {
     if(!furi_hal_bt_is_testing_supported()) {
         FURI_LOG_E(TAG, "Incorrect radio stack: radio testing features are absent.");
         DialogsApp* dialogs = furi_record_open(RECORD_DIALOGS);
-        dialog_message_show_storage_error(dialogs, "Incorrect\nRadioStack");
+        dialog_message_show_storage_error(dialogs, "RadioStack\nIncorreta");
         return 255;
     }
 

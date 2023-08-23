@@ -11,7 +11,7 @@ void subghz_scene_rpc_on_enter(void* context) {
     Popup* popup = subghz->popup;
 
     popup_set_header(popup, "Sub-GHz", 89, 42, AlignCenter, AlignBottom);
-    popup_set_text(popup, "RPC mode", 89, 44, AlignCenter, AlignTop);
+    popup_set_text(popup, "Modo RPC", 89, 44, AlignCenter, AlignTop);
 
     popup_set_icon(popup, 0, 12, &I_RFIDDolphinSend_97x61);
 
@@ -94,7 +94,7 @@ bool subghz_scene_rpc_on_event(void* context, SceneManagerEvent event) {
                     furi_string_free(file_name);
                 } else {
                     rpc_system_app_set_error_code(subghz->rpc_ctx, SubGhzErrorTypeParseFile);
-                    rpc_system_app_set_error_text(subghz->rpc_ctx, "Cannot parse file");
+                    rpc_system_app_set_error_text(subghz->rpc_ctx, "Erro ao processar arquivo");
                 }
             }
             rpc_system_app_confirm(subghz->rpc_ctx, RpcAppEventLoadFile, result);

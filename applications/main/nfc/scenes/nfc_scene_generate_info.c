@@ -13,7 +13,7 @@ void nfc_scene_generate_info_on_enter(void* context) {
     // Setup dialog view
     FuriHalNfcDevData* data = &nfc->dev->dev_data.nfc_data;
     DialogEx* dialog_ex = nfc->dialog_ex;
-    dialog_ex_set_right_button_text(dialog_ex, "More");
+    dialog_ex_set_right_button_text(dialog_ex, "Mais");
 
     // Create info text
     FuriString* info_str = furi_string_alloc_printf(

@@ -15,10 +15,10 @@ void power_settings_scene_reboot_on_enter(void* context) {
     PowerSettingsApp* app = context;
     Submenu* submenu = app->submenu;
 
-    submenu_set_header(submenu, "Reboot type");
+    submenu_set_header(submenu, "Tipo de reinicializacao");
     submenu_add_item(
         submenu,
-        "Firmware upgrade",
+        "Atualizacao de firmware",
         PowerSettingsRebootSubmenuIndexDfu,
         power_settings_scene_reboot_submenu_callback,
         app);

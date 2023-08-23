@@ -1,6 +1,6 @@
 App(
     appid="clock",
-    name="Clock",
+    name="Relogio",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="clock_app",
     requires=["gui"],

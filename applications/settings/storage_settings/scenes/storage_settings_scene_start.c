@@ -21,37 +21,37 @@ void storage_settings_scene_start_on_enter(void* context) {
 
     submenu_add_item(
         submenu,
-        "About Internal Storage",
+        "Sobre Armazen. Interno",
         StorageSettingsStartSubmenuIndexInternalInfo,
         storage_settings_scene_start_submenu_callback,
         app);
     submenu_add_item(
         submenu,
-        "About SD Card",
+        "Sobre Cartao SD",
         StorageSettingsStartSubmenuIndexSDInfo,
         storage_settings_scene_start_submenu_callback,
         app);
     submenu_add_item(
         submenu,
-        "Unmount SD Card",
+        "Desmontar Cartao SD",
         StorageSettingsStartSubmenuIndexUnmount,
         storage_settings_scene_start_submenu_callback,
         app);
     submenu_add_item(
         submenu,
-        "Format SD Card",
+        "Formatar Cartao SD",
         StorageSettingsStartSubmenuIndexFormat,
         storage_settings_scene_start_submenu_callback,
         app);
     submenu_add_item(
         submenu,
-        "Benchmark SD Card",
+        "Testar Cartao SD",
         StorageSettingsStartSubmenuIndexBenchy,
         storage_settings_scene_start_submenu_callback,
         app);
     submenu_add_item(
         submenu,
-        "Factory Reset",
+        "Reinicializacao de Fabrica",
         StorageSettingsStartSubmenuIndexFactoryReset,
         storage_settings_scene_start_submenu_callback,
         app);

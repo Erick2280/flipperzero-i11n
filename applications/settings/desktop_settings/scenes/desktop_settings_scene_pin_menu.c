@@ -22,7 +22,7 @@ void desktop_settings_scene_pin_menu_on_enter(void* context) {
     if(!app->settings.pin_code.length) {
         submenu_add_item(
             submenu,
-            "Set Pin",
+            "Configurar PIN",
             SCENE_EVENT_SET_PIN,
             desktop_settings_scene_pin_menu_submenu_callback,
             app);
@@ -30,20 +30,20 @@ void desktop_settings_scene_pin_menu_on_enter(void* context) {
     } else {
         submenu_add_item(
             submenu,
-            "Change Pin",
+            "Alterar PIN",
             SCENE_EVENT_CHANGE_PIN,
             desktop_settings_scene_pin_menu_submenu_callback,
             app);
 
         submenu_add_item(
             submenu,
-            "Disable",
+            "Desabilitar",
             SCENE_EVENT_DISABLE_PIN,
             desktop_settings_scene_pin_menu_submenu_callback,
             app);
     }
 
-    submenu_set_header(app->submenu, "Pin code settings:");
+    submenu_set_header(app->submenu, "Configuracoes do PIN:");
     submenu_set_selected_item(app->submenu, app->menu_idx);
     view_dispatcher_switch_to_view(app->view_dispatcher, DesktopSettingsAppViewMenu);
 }

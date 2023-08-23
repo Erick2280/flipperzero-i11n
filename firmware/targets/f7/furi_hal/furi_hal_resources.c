@@ -87,12 +87,12 @@ const GpioPinRecord gpio_pins[] = {
 const size_t gpio_pins_count = sizeof(gpio_pins) / sizeof(GpioPinRecord);
 
 const InputPin input_pins[] = {
-    {.gpio = &gpio_button_up, .key = InputKeyUp, .inverted = true, .name = "Up"},
-    {.gpio = &gpio_button_down, .key = InputKeyDown, .inverted = true, .name = "Down"},
-    {.gpio = &gpio_button_right, .key = InputKeyRight, .inverted = true, .name = "Right"},
-    {.gpio = &gpio_button_left, .key = InputKeyLeft, .inverted = true, .name = "Left"},
+    {.gpio = &gpio_button_up, .key = InputKeyUp, .inverted = true, .name = "Cima"},
+    {.gpio = &gpio_button_down, .key = InputKeyDown, .inverted = true, .name = "Baixo"},
+    {.gpio = &gpio_button_right, .key = InputKeyRight, .inverted = true, .name = "Direita"},
+    {.gpio = &gpio_button_left, .key = InputKeyLeft, .inverted = true, .name = "Esquerda"},
     {.gpio = &gpio_button_ok, .key = InputKeyOk, .inverted = false, .name = "OK"},
-    {.gpio = &gpio_button_back, .key = InputKeyBack, .inverted = true, .name = "Back"},
+    {.gpio = &gpio_button_back, .key = InputKeyBack, .inverted = true, .name = "Voltar"},
 };
 
 const size_t input_pins_count = sizeof(input_pins) / sizeof(InputPin);

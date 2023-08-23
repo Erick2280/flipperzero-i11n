@@ -194,9 +194,9 @@ int32_t about_settings_app(void* p) {
 
     while(1) {
         if(screen_index >= COUNT_OF(about_screens) - 1) {
-            dialog_message_set_buttons(message, "Back", NULL, NULL);
+            dialog_message_set_buttons(message, "Voltar", NULL, NULL);
         } else {
-            dialog_message_set_buttons(message, "Back", NULL, "Next");
+            dialog_message_set_buttons(message, "Voltar", NULL, "Prox.");
         }
 
         screen_result = about_screens[screen_index](dialogs, message);

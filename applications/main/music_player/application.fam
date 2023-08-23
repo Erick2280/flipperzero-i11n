@@ -1,6 +1,6 @@
 App(
     appid="music_player",
-    name="Music Player",
+    name="Reprodutor de Musica",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="music_player_app",
     requires=[
